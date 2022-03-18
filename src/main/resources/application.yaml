@@ -1,0 +1,25 @@
+pubsub-example:
+  topic:
+    name: email-topic
+  subscription:
+    name: email-subscription
+
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: #inserir valor que está no jira
+    jdbc-url: #inserir valor que está no jira
+    username: #inserir valor que está no jira
+    password: #inserir valor que está no jira
+    driver-class-name: #inserir valor que está no jira
+  cloud:
+    gcp:
+    ### Gerar no service account do GCP ###
+#      credentials:
+#        location: classpath:credentials.json
+      project-id: poc-email-banking
+      pubsub:
+        enabled: true
+        emulator-host: localhost:8681 #usar imagem docker que está no jira
+        project-id: poc-email-banking
